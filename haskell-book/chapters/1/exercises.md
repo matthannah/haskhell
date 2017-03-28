@@ -23,7 +23,7 @@
 1. (𝜆abc.cba)zz(𝜆wv.w)
 ```
 (𝜆abc.cba)zz(𝜆wv.w)
-(𝜆a.𝜆b.𝜆c.cba)(z)z(𝜆w.𝜆v.w)
+(𝜆a.𝜆b.𝜆c.cba)(z)z(𝜆w.𝜆v.w) # Made the currying explicit by adding the implied lambdas
 (𝜆b.𝜆c.cbz)z(𝜆w.𝜆v.w)
 (𝜆c.czz)(𝜆w.𝜆v.w)
 (𝜆w.𝜆v.w)(z)z
@@ -71,11 +71,11 @@ aac
 ```
 7. (𝜆xyz.xz(yz))(𝜆x.z)(𝜆x.a)
 ```
-(𝜆xyz.xz(yz))(𝜆x.z)(𝜆x.a)
-(𝜆x.𝜆y.𝜆z.xz(yz))(𝜆x.z)(𝜆x.a)
-(𝜆x.𝜆y.𝜆z1.xz1(yz1))(𝜆x.z)(𝜆x.a)
-(𝜆y.𝜆z1.(𝜆x.z)z1(yz1))(𝜆x.a)
-(𝜆z1.(𝜆x.z)z1((𝜆x.a)z1)) # Note: There is no more arguments to apply to the outer lambda, so we start working on reducing the inner lambda
-(𝜆z1.z1((𝜆x.a)z1))
-(𝜆z1.z1a)
+(𝜆xyz.xz(yz))(𝜆x.z)(𝜆x.a) # Our expression to reduce
+(𝜆x.𝜆y.𝜆z.xz(yz))(𝜆x.z)(𝜆x.a) # Made the currying explicit by adding the implied lambdas
+(𝜆x.𝜆y.𝜆w.xw(yw))(𝜆x.z)(𝜆x.a) # Renamed z -> w to avoid confusion (since z is found in 2 seperate lambda functions)
+(𝜆y.𝜆w.(𝜆x.z)w(yw))(𝜆x.a) # Applied x bound to the argument (𝜆x.z)
+(𝜆w.(𝜆x.z)w((𝜆x.a)w)) # Applied y bound to the argument (𝜆x.a)
+(𝜆w.z((𝜆x.a)w)) # There were no more arguments to apply to the outer lambda, so we started working on reducing the inner lambda by applying x bound to the argument w for the lambda (𝜆x.z)w
+(𝜆w.za) # Again, working on the inner lambda we applied x bound to the argument w for the lambda (𝜆x.a)w
 ```
