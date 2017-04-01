@@ -43,3 +43,14 @@
 - Because they are built purely of expressions they will always evaluate to the same result when given the same values
 - As in lambda calculus a function only takes one argument and returns one result
 - When it seems we are using multiple arguments, it's actually applying a series of nested functions, each to one argument; *currying*
+
+**Defining Functions**
+- A Function definition starts with the name of the function
+- The name is followed by the formal parameters (arguments) of the function, seperated by white space
+- Next is the equal sign character, which expresses equality of the terms
+- Finally there is an expression that is the body of the function and can be evaluated to return a values
+- An example function definition; `triple x = x * 3`
+- Defining functions in GHCi (REPL) we use the let keyword; `let triple x = x * 3`
+- Function names should be camelCase
+
+**Evaluation**
