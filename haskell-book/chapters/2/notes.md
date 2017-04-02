@@ -54,3 +54,12 @@
 - Function names should be camelCase
 
 **Evaluation**
+- Evaluating an expression; reducing terms until the expression reaches the simplest form.
+- Once a term has reached its simplest form, we call it a value
+- Haskell has non-strict evaluation (lazy evaluation); evaluation is defered until other terms refer to them
+- Values are irreducible, but applications of functions to arguments are reducible
+- Reducing an expression means evaluating the terms until you're left with a value
+- Values are the terminal point of reduction
+- As in lambda calculus, application is evaluation
+- Haskell doesn't evaluate everything to normal form by default; it only evaluates to weak head normal form (more on this later)
+- Non-strict evaluation means that not everything will get reduced to its normal form; `(\f -> (1, 2 + f)) 2` reduces to the weak head normal form `(1, 2 + 2)`. This representation is an approximation; the key point being `2 + 2` is not reduced until the last possible moment
