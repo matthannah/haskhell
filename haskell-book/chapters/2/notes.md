@@ -43,6 +43,7 @@
 - Because they are built purely of expressions they will always evaluate to the same result when given the same values
 - As in lambda calculus a function only takes one argument and returns one result
 - When it seems we are using multiple arguments, it's actually applying a series of nested functions, each to one argument; *currying*
+- Functions default to prefix syntax; the function being applied is at the beginning of an expression
 
 **Defining Functions**
 - A Function definition starts with the name of the function
@@ -63,3 +64,5 @@
 - As in lambda calculus, application is evaluation
 - Haskell doesn't evaluate everything to normal form by default; it only evaluates to weak head normal form (more on this later)
 - Non-strict evaluation means that not everything will get reduced to its normal form; `(\f -> (1, 2 + f)) 2` reduces to the weak head normal form `(1, 2 + 2)`. This representation is an approximation; the key point being `2 + 2` is not reduced until the last possible moment
+
+**Infix Operators**
