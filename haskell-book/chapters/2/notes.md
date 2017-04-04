@@ -66,3 +66,10 @@
 - Non-strict evaluation means that not everything will get reduced to its normal form; `(\f -> (1, 2 + f)) 2` reduces to the weak head normal form `(1, 2 + 2)`. This representation is an approximation; the key point being `2 + 2` is not reduced until the last possible moment
 
 **Infix Operators**
+- Functions in Haskell default to either prefix or infix operators
+- An example of an infix operator is `+` in `1 + 1` and an example of a prefix operator is `triple` in `triple 3`
+- Functions that have an alphanumeric name default to prefix
+- Functions that have a symbol as a name default to infix
+- You can sometimes use prefix functions as infix by using the syntax ``2 `div` 4`` compared to prefix `div 2 4`
+- Not all prefix functions can be used as infix
+- You can also use infix operators as prefix when you surround them with parentheses; `(+) 1 1` is the same as `1 + 1`
