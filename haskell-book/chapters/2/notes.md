@@ -81,3 +81,9 @@
 - `infixl` means it's an infix operator and is left associative
 - `7` is its precedence; the higher precedence operators are applied first (on a scale of 0-9)
 - `*` is the infix function name, in this case multiplication
+- intuition about precedence in maths generally hold in Haskell
+
+**Left vs Right associativity**
+- this `2 * 3 * 4` is evaluated as if it was this `(2 * 3) * 4` because of * being left associative
+- this `2 ^ 3 ^ 4` is evaluated as if it was this `2 ^ (3 ^ 4)` because of ^ being right associative
+- we can manually add in parentheses to change results; `(2 ^ 3) ^ 4` will evaluate `2 ^ 3` first; just like maths!
