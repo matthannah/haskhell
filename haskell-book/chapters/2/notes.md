@@ -73,3 +73,11 @@
 - You can sometimes use prefix functions as infix by using the syntax ``2 `div` 4`` compared to prefix `div 2 4`
 - Not all prefix functions can be used as infix
 - You can also use infix operators as prefix when you surround them with parentheses; `(+) 1 1` is the same as `1 + 1`
+
+**Associativity and Precedence**
+- As in math, there's a default associativity and precedence to the infix operators `+ * / -`
+- The special command :info will tell you about a functions type information, whether it's an infix operator, and its associativity and precedence
+- Entering the command `:info (*)` will output the following in Prelude: `infixl 7 *`.. try it!
+- `infixl` means it's an infix operator and is left associative
+- `7` is its precedence; the higher precedence operators are applied first (on a scale of 0-9)
+- `*` is the infix function name, in this case multiplication
