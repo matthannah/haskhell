@@ -27,7 +27,7 @@ Decide whether the added parentheses from a) to b) change the results of the fun
 1. a) `8 + 7 * 9` b) `(8 + 7) * 9`
 ```
 The parentheses change the result:
-a) 7 * 9 is evaluated first
+a) 7 * 9 is evaluated first 
 b) 8 + 7 is evaluated first
 ```
 2. a) `perimeter x y = (x * 2) + (y * 2)` b) `perimeter x y = x * 2 + y * 2`

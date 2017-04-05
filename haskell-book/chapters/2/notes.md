@@ -82,6 +82,7 @@
 - `7` is its precedence; the higher precedence operators are applied first (on a scale of 0-9)
 - `*` is the infix function name, in this case multiplication
 - intuition about precedence in maths generally hold in Haskell
+- remember! associativity of an operator is a property that determines how operators of the same precedence are grouped in the absence of parentheses.
 
 **Left vs Right associativity**
 - this `2 * 3 * 4` is evaluated as if it was this `(2 * 3) * 4` because of * being left associative
