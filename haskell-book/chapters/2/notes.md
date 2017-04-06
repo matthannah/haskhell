@@ -88,3 +88,26 @@
 - this `2 * 3 * 4` is evaluated as if it was this `(2 * 3) * 4` because of * being left associative
 - this `2 ^ 3 ^ 4` is evaluated as if it was this `2 ^ (3 ^ 4)` because of ^ being right associative
 - we can manually add in parentheses to change results; `(2 ^ 3) ^ 4` will evaluate `2 ^ 3` first; just like maths!
+
+**Declaring Values**
+- The order of declarations in source code don't matter, because the file is loaded in its entirety at once
+- However it does matter in the REPL, since things are evaluated per loop
+- In the REPL we can declare a value like so: `let y = 10`, `let x = 10 * 5 + y`, `let myResult = x * 5`; typing the names of the values and hitting enter will return the value
+- Take a look at the file learn.hs for an example of doing the same declarations
+- Note that module names start with a capital letter! more on this later ;)
+- An example of loading the module learn.hs;
+```
+Prelude> :load learn.hs
+[1 of 1] Compiling Learn            ( learn.hs, interpreted )
+Ok, modules loaded: Learn.
+*Learn> x
+60
+*Learn> y
+10
+*Learn> myResult
+300
+*Learn> :module
+Prelude>
+```
+
+**Troubleshooting**
