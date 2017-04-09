@@ -27,7 +27,7 @@ Decide whether the added parentheses from a) to b) change the results of the fun
 1. a) `8 + 7 * 9` b) `(8 + 7) * 9`
 ```
 The parentheses change the result:
-a) 7 * 9 is evaluated first 
+a) 7 * 9 is evaluated first
 b) 8 + 7 is evaluated first
 ```
 2. a) `perimeter x y = (x * 2) + (y * 2)` b) `perimeter x y = x * 2 + y * 2`
@@ -39,4 +39,23 @@ The parentheses do not change the result since * is evaluated first
 The parentheses change the result:
 a) x / 2 is evaluated first
 b) 2 + 9 is evaluated first
+```
+
+## Heal the Sick
+The following code samples are broken and won’t compile. The first two are as you might enter into the REPL; the third is from a source file. Find the mistakes and fix them so that they will.
+1. let area x = 3. 14 * (x * x)
+```
+let area x = 3.14 * (x * x) # white space between '3.' and '14'
+```
+2. let double x = b * 2
+```
+let double x = x * 2 # variable b not in scope
+```
+3. x = 7
+ y = 10
+f = x + y
+```
+x = 7
+y = 10 # white space before definition of y
+f = x + y
 ```
