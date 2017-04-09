@@ -122,8 +122,9 @@ Prelude>
 - Checkout the exercises for `Heal the Sick` for common troubleshooting examples
 
 **Arithmetic Functions**
+
 | Operator | Name      | Purpose                                |
-| ---------|:---------:| --------------------------------------:|
+| ---------|-----------| ---------------------------------------|
 | +        | plus      | addition                               |
 | -        | minus     | subtraction                            |
 | *        | asterisk  | multiplication                         |
