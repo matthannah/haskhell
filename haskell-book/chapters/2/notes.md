@@ -133,3 +133,34 @@ Prelude>
 | mod      | modulo    | like 'rem', but after modular division |
 | quot     | quotient  | integral division, round towards zero  |
 | rem      | remainder | remainder after division               |
+
+- Examples of each in the REPL:
+```
+Prelude> 21 + 4
+25
+Prelude> 45 - 21
+24
+Prelude> 32 * (-2) # Note brackets around negatives
+-64
+Prelude> 4 / 3
+1.3333333333333333
+Prelude> div 20 6
+3
+Prelude> quot 20 6
+3
+Prelude> div 20 (-6) # Rounds down
+-4
+Prelude> quot 20 (-6) # Rounds towards zero
+-3
+Prelude> mod 21 2
+1
+Prelude> mod 21 (-2)
+-1
+Prelude> rem 21 2
+1
+Prelude> rem 21 (-2)
+1
+
+```
+
+**Laws for quotients and remainders**
