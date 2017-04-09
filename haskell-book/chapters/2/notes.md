@@ -120,3 +120,15 @@ Prelude>
 - Parts of the expression that are grouped should be indented at the same level
 - Pay careful attention to indentation markers
 - Checkout the exercises for `Heal the Sick` for common troubleshooting examples
+
+**Arithmetic Functions**
+| Operator | Name      | Purpose                                |
+| ---------|:---------:| --------------------------------------:|
+| +        | plus      | addition                               |
+| -        | minus     | subtraction                            |
+| *        | asterisk  | multiplication                         |
+| /        | slash     | fractional division                    |
+| div      | divide    | integral division, round down          |
+| mod      | modulo    | like 'rem', but after modular division |
+| quot     | quotient  | integral division, round towards zero  |
+| rem      | remainder | remainder after division               |
