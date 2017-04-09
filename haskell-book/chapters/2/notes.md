@@ -16,12 +16,12 @@
 **GHCi commands**
 - Special commands start with the colon character `:`
 - These commands are not Haskell code, rather a way to interact with the REPL
-- :quit is an example of a special command available in GHCi
+- `:quit` is an example of a special command available in GHCi
 
 **Working with source files**
 - We want to be able to import our source code for testing into the REPL
-- This can be done with the :load command followed by the name of the file; `:load test.hs` for example
-- .hs is the Haskell file extension
+- This can be done with the `:load` command followed by the name of the file; `:load test.hs` for example
+- `.hs` is the Haskell file extension
 - When the module is loaded run `sayHello "Haskell"` to interact with it
 - Note that the `Prelude>` prompt has changed, to return, use the command `:module`
 
