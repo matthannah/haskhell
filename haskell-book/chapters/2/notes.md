@@ -111,3 +111,12 @@ Prelude>
 ```
 
 **Troubleshooting**
+- Incorrect indentation of code can break your code; can change the meaning of the code
+- REMEMBER: Use spaces not tabs!
+- Whitespace is significant; it is the only mark of a function call; `triple 3`
+- Trailing white space is considered bad style!
+- In source code files, indentation replaces syntatic markers like curly braces, semicolons and parentheses
+- Basic rule; code that is part of an expression should be indented under the beginning of that expression, even when the expression is not at the leftmost margin
+- Parts of the expression that are grouped should be indented at the same level
+- Pay careful attention to indentation markers
+- Checkout the exercises for `Heal the Sick` for common troubleshooting examples
