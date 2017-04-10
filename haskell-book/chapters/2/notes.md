@@ -164,3 +164,45 @@ Prelude> rem 21 (-2)
 ```
 
 **Laws for quotients and remainders**
+- `(quot x y) * y + (rem x y) == x`
+-  `(div x y) * y + (mod x y) == x`
+
+**Using mod**
+- mod gives the remainder of a modular division
+- modular arithmetic is a system of arithmetic for integers where numbers "wrap around" upon reaching a certain value, called the modulus
+- You can think of this as an analogy of a clock; `mod 8 12` is + 8 hours starting from zero around a 12 hour clock, so the evaluated result will be `8`. `mod 14 12` is + 14 hours starting from zero, so we wrap around past the 12, and land on 2, thus the evaluated result is `2`
+- This is arithmetic modulo 12. It should be noted that 12 is equivalent to 0
+- Lets write a function to determine the day of the week, assigning weekdays a number with Sunday as zero:
+```
+Prelude> mod (1 + 23) 7 --1 is the current day (Monday), 23 is the number of days we are adding, and wrap around 7
+3 # Wednesday
+Prelude> rem (1 + 23) 7 --We can use rem too with apparent equivalent accuracy
+3
+Prelude> mod (3 - 12) 7 --If we want to subtract we will see a difference between the two
+5
+Prelude> rem (3 - 12) 7 --The version with mod gave a correct answer, while rem did not!
+-2
+```
+- As seen from the example, the negative is handled differently between mod and rem in Haskell (this is not the same in all languages)
+- If one or both arguments are negative; mod results will have the same sign as the divisor (bottom part in a division; the `3` in `1/3`)
+- The result of rem will have the same sign as the dividend (the top part in a division; the `1` in `1/3`)
+- The behaviours can be seen below:
+```
+--mod
+Prelude> (-7) `mod` 2
+1
+Prelude> 7 `mod` (-2)
+-1
+Prelude> (-7) `mod` (-2)
+-1
+
+--rem
+Prelude> (-7) `rem` 2
+-1
+Prelude> 7 `rem` (-2)
+1
+Prelude> (-7) `rem` (-2)
+-1
+```
+
+**Negative Numbers**
