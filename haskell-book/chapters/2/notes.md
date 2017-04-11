@@ -206,3 +206,38 @@ Prelude> (-7) `rem` (-2)
 ```
 
 **Negative Numbers**
+- If you want a value that is a negative number we can do this:
+```
+Prelude> -10
+-10
+```
+- However, this won't work:
+```
+Prelude> 5 + -10
+<interactive>:3:1:
+    Precedence parsing error
+        cannot mix ‘+’ [infixl 6] and
+        prefix `-` [infixl 6]
+           in the same infix expression
+```
+- Note how the error message lets us know it is to do with precedence; it thinks we are trying to add and subtract, not add a negative number
+- Introducing parentheses allows the expression to be evaluated:
+```
+Prelude> 5 + (-10)
+-5
+```
+- The negation of numbers by the use of unary `-` in `-10` is a form of syntactic sugar for `negate 10`
+- Note that syntactic sugar simply makes code easier to read and write, there is no semantic difference. The two expressions are semantically identical:
+```
+Prelude> 10 + (-5)
+5
+Prelude> 10 + (negate 5)
+5
+```
+- and here `-` is being used for subtraction:
+```
+Prelude> 10 - 5
+5
+```
+
+**Parenthesization**
