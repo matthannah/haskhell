@@ -174,13 +174,13 @@ Prelude> rem 21 (-2)
 - This is arithmetic modulo 12. It should be noted that 12 is equivalent to 0
 - Lets write a function to determine the day of the week, assigning weekdays a number with Sunday as zero:
 ```
-Prelude> mod (1 + 23) 7 --1 is the current day (Monday), 23 is the number of days we are adding, and wrap around 7
+Prelude> mod (1 + 23) 7 -- 1 is the current day (Monday), 23 is the number of days we are adding, and wrap around 7
 3 # Wednesday
-Prelude> rem (1 + 23) 7 --We can use rem too with apparent equivalent accuracy
+Prelude> rem (1 + 23) 7 -- We can use rem too with apparent equivalent accuracy
 3
-Prelude> mod (3 - 12) 7 --If we want to subtract we will see a difference between the two
+Prelude> mod (3 - 12) 7 -- If we want to subtract we will see a difference between the two
 5
-Prelude> rem (3 - 12) 7 --The version with mod gave a correct answer, while rem did not!
+Prelude> rem (3 - 12) 7 -- The version with mod gave a correct answer, while rem did not!
 -2
 ```
 - As seen from the example, the negative is handled differently between mod and rem in Haskell (this is not the same in all languages)
@@ -188,7 +188,7 @@ Prelude> rem (3 - 12) 7 --The version with mod gave a correct answer, while rem 
 - The result of rem will have the same sign as the dividend (the top part in a division; the `1` in `1/3`)
 - The behaviours can be seen below:
 ```
---mod
+-- mod
 Prelude> (-7) `mod` 2
 1
 Prelude> 7 `mod` (-2)
@@ -196,7 +196,7 @@ Prelude> 7 `mod` (-2)
 Prelude> (-7) `mod` (-2)
 -1
 
---rem
+-- rem
 Prelude> (-7) `rem` 2
 -1
 Prelude> 7 `rem` (-2)
@@ -248,13 +248,13 @@ Prelude> 10 - 5
 ```
 Prelude> (2^)(2+2)
 16
-Prelude> (2^) $ 2 + 2 --With $ operator
+Prelude> (2^) $ 2 + 2 -- With $ operator
 16
-Prelude> (2^) 2 + 2 --Without parentheses or $ operator
+Prelude> (2^) 2 + 2 -- Without parentheses or $ operator
 6
-Prelude> (2^) $ (+2) $ 3 * 2 --Two $ operators
+Prelude> (2^) $ (+2) $ 3 * 2 -- Two $ operators
 256
-Prelude> (2^) $ 2 + 2 $ (*30) --This gives a large error (seen below)
+Prelude> (2^) $ 2 + 2 $ (*30) -- This gives a large error (seen below)
 
 <interactive>:9:2: error:
     * Could not deduce (Integral b0) arising from an operator section
@@ -299,3 +299,34 @@ Prelude> (2^) $ 2 + 2 $ (*30) --This gives a large error (seen below)
       In the second argument of `($)', namely `2 + 2 $ (* 30)'
       In the expression: (2 ^) $ 2 + 2 $ (* 30)
 ```
+- We can see why the last example errors with reduction:
+```
+(2^) $ 2 + 2 $ (*30)
+-- Given the right-associativity (infixr) of $
+-- we must begin at the right-most position.
+2 + 2 $ (*30)
+-- reduce ($)
+(2 + 2) (*30)
+-- then we must evaluate (2 + 2) before we can apply it
+4 (*30)
+-- This doesn't make sense! We can't apply 4
+-- as if it was a function to the argument (*30)!
+```
+- Flipping the expression around we can see that this now works:
+```
+(2^) $ (*30) $ 2 + 2
+-- must evaluate right-side first
+(2^) $ (*30) $ 2 + 2
+-- application of the function (*30) to the
+-- expression (2 + 2) forces evaluation
+(2^) $ (*30) 4
+-- then we reduce (*30) 4
+(2^) $ 120
+-- reduce ($) again.
+(2^) 120
+-- reduce (2^)
+1329227995784915872903807060280344576
+```
+- The $ operator is too common to not be familiar with, even if parentheses are easier to read
+
+**Parenthesizing infix operators**
