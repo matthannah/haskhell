@@ -240,4 +240,62 @@ Prelude> 10 - 5
 5
 ```
 
-**Parenthesization**
+**($) Operator**
+- This operator causes everything to the right of it to be evaluated first
+- It's a convenience for when you want to express something with fewer parentheses
+- You can use multiple `$` operators in the same expression
+- Here's some examples straight from the book:
+```
+Prelude> (2^)(2+2)
+16
+Prelude> (2^) $ 2 + 2 --With $ operator
+16
+Prelude> (2^) 2 + 2 --Without parentheses or $ operator
+6
+Prelude> (2^) $ (+2) $ 3 * 2 --Two $ operators
+256
+Prelude> (2^) $ 2 + 2 $ (*30) --This gives a large error (seen below)
+
+<interactive>:9:2: error:
+    * Could not deduce (Integral b0) arising from an operator section
+      from the context: Num a
+        bound by the inferred type of it :: Num a => a
+        at <interactive>:9:1-20
+      The type variable `b0' is ambiguous
+      These potential instances exist:
+        instance Integral Integer -- Defined in `GHC.Real'
+        instance Integral Int -- Defined in `GHC.Real'
+        instance Integral Word -- Defined in `GHC.Real'
+    * In the expression: (2 ^)
+      In the expression: (2 ^) $ 2 + 2 $ (* 30)
+      In an equation for `it': it = (2 ^) $ 2 + 2 $ (* 30)
+
+<interactive>:9:8: error:
+    * Could not deduce (Num ((a0 -> a0) -> b0))
+        arising from a use of `+'
+        (maybe you haven't applied a function to enough arguments?)
+      from the context: Num a
+        bound by the inferred type of it :: Num a => a
+        at <interactive>:9:1-20
+      The type variables `b0', `a0' are ambiguous
+    * In the expression: 2 + 2
+      In the second argument of `($)', namely `2 + 2 $ (* 30)'
+      In the expression: (2 ^) $ 2 + 2 $ (* 30)
+
+<interactive>:9:17: error:
+    * Could not deduce (Num a0) arising from an operator section
+      from the context: Num a
+        bound by the inferred type of it :: Num a => a
+        at <interactive>:9:1-20
+      The type variable `a0' is ambiguous
+      These potential instances exist:
+        instance Num Integer -- Defined in `GHC.Num'
+        instance Num Double -- Defined in `GHC.Float'
+        instance Num Float -- Defined in `GHC.Float'
+        ...plus two others
+        ...plus one instance involving out-of-scope types
+        (use -fprint-potential-instances to see them all)
+    * In the second argument of `($)', namely `(* 30)'
+      In the second argument of `($)', namely `2 + 2 $ (* 30)'
+      In the expression: (2 ^) $ 2 + 2 $ (* 30)
+```
