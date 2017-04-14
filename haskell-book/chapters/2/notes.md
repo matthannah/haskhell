@@ -330,3 +330,11 @@ Prelude> (2^) $ 2 + 2 $ (*30) -- This gives a large error (seen below)
 - The $ operator is too common to not be familiar with, even if parentheses are easier to read
 
 **Parenthesizing infix operators**
+- There are times when you want to refer to an infix function without applying any arguments, as well as times when you want to use them as prefix operators
+- We learnt previously that to do this, we must wrap the operator in parentheses; `(+) 2 2`
+- So `(+)` is the addition infix function without any arguments applied yet and `(+1)` is the addition infix function with one argument applied `1`
+- The syntax `(+1)` is known as sectioning, which allows you to pass around partially applied functions
+- It doesn't matter if you write `(+1)` or `(1+)`, because the order of the arguments won't change the result
+- Remember that this won't work; `(-1) 2` because the `-` operator is acting as negation! However, this will work; `(1-) 2`
+
+**Let and Where**
