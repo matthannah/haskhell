@@ -338,3 +338,23 @@ Prelude> (2^) $ 2 + 2 $ (*30) -- This gives a large error (seen below)
 - Remember that this won't work; `(-1) 2` because the `-` operator is acting as negation! However, this will work; `(1-) 2`
 
 **Let and Where**
+- `let` introduces an expression, so it can be used wherever you can have an expression
+- `where` is a declaration and is bound to a surrounding syntactic construct
+- Example of `where`:
+```
+printInc x = print plusFive
+  where plusFive = x + 5
+
+-- Using printInc:
+printInc 2
+7
+```
+- Example of `let`:
+```
+printInc x = let plusFive = x + 5
+             in print plusFive
+
+-- Using printInc:
+printInc 5
+10
+```
