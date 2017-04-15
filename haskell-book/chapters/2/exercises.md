@@ -82,3 +82,28 @@ The following code samples are broken and won’t compile. Find the mistakes and
     y = 10 # white space before definition of y
     f = x + y
     ```
+
+## A Head Code
+Determine in your head what the following expressions will return, then validate in the REPL:
+1. `let x = 5 in x` -> `5`
+2. `let x = 5 in x * x` -> `25`
+3. `let x = 5; y = 6 in x * y` -> `30`
+4. `let x = 3; y = 1000 in x + 3` -> `6`
+
+REPL:
+```
+Prelude> let x = 5 in x
+5
+Prelude> let x = 5 in x * x
+25
+Prelude> let x = 5; y = 6 in x * y
+30
+Prelude> let x = 3; y = 1000 in x + 3
+6
+```
+
+# Rewrite with where clause
+Rewrite the following in a file named `where.hs`:
+1. let x = 3; y = 1000 in x * 3 + y
+2. let y = 10; x = 10 * 5 + y in x * 5
+3. let x = 7; y = negate x; z = y * 10 in z / x + y
