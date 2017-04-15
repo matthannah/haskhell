@@ -1,4 +1,5 @@
-# Exercises
+# Learning Exercises
+Exercises that come out throughout the chapter
 
 ## Comprehension Check
 1. How would we change the following lines of code so that they are usable in the GHCi (REPL)? `half x = x / 2` and `square x = x * x`
