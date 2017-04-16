@@ -48,3 +48,78 @@ Which of the following pairs of expressions will return the same result when eva
   2 * 5 + 18 = 10 + 18 = 28
   2 * (5 + 18) = 2 * 23 = 46
   ```
+
+## Functions
+Enter the following code into the REPL, in the correct order, so that is can be evaluated:
+```
+z = 7
+x = y ^ 2
+waxOn = x * 5
+y = z + 8
+```
+Entered into the REPL:
+```
+Prelude> z = 7
+Prelude> y = z + 8
+Prelude> x = y ^ 2
+Prelude> waxOn = x * 5
+```
+Now that waxOn is a value in the REPL, what do you think the results of each of the following will be? Include workings. Remember to validate your answers with the REPL
+1. `10 + waxOn`
+
+  ```
+  result = 10 + waxOn
+  result = 10 + (x * 5) -- sub in waxOn
+  result = 10 + ((y ^ 2) * 5) -- sub in x
+  result = 10 + (((z + 8) ^ 2) * 5) -- sub in y
+  result = 10 + (((7 + 8) ^ 2) * 5) -- sub in z
+  result = 10 + (((15) ^ 2) * 5) -- solve
+  result = 10 + ((225) * 5) -- solve
+  result = 10 + (1125) -- solve
+  result = 1135
+  ```
+
+2. `(+10) waxOn`
+
+  ```
+  result = (+10) waxOn
+  result = (+10) x * 5 -- sub in waxOn
+  result = (+10) (y ^ 2) * 5 -- sub in x
+  result = (+10) ((z + 8) ^ 2) * 5 -- sub in y
+  result = (+10) ((7 + 8) ^ 2) * 5 -- sub in z
+  result = (+10) ((15) ^ 2) * 5 -- solve
+  result = (+10) (225) * 5 -- solve
+  result = (+10) 1125 -- solve
+  result = 10 + 1125
+  result = 1135
+  ```
+
+3. `(-) 15 waxOn`
+
+  ```
+  result = (-) 15 waxOn
+  result = (-) 15 (x * 5) -- sub in waxOn
+  result = (-) 15 ((y ^ 2) * 5) -- sub in x
+  result = (-) 15 (((z + 8) ^ 2) * 5) -- sub in y
+  result = (-) 15 (((7 + 8) ^ 2) * 5) -- sub in z
+  result = (-) 15 (((15) ^ 2) * 5) -- solve
+  result = (-) 15 ((225) * 5) -- solve
+  result = (-) 15 1125 -- solve
+  result = 15 - 1125
+  result = -1110
+  ```
+
+4. `(-) waxOn 15`
+
+  ```
+  result = (-) waxOn 15
+  result = (-) (x * 5) 15 -- sub in waxOn
+  result = (-) ((y ^ 2) * 5) 15 -- sub in x
+  result = (-) (((z + 8) ^ 2) * 5) 15 -- sub in y
+  result = (-) (((7 + 8) ^ 2) * 5) 15 -- sub in z
+  result = (-) (((15) ^ 2) * 5) 15 -- solve
+  result = (-) ((225) * 5) 15 -- solve
+  result = (-) 1125 15 -- solve
+  result = 1125 - 15
+  result = 1110
+  ```
