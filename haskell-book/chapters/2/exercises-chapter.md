@@ -64,8 +64,10 @@ Prelude> y = z + 8
 Prelude> x = y ^ 2
 Prelude> waxOn = x * 5
 ```
-Now that waxOn is a value in the REPL, what do you think the results of each of the following will be? Include workings. Remember to validate your answers with the REPL
-1. `10 + waxOn`
+
+1. Now that waxOn is a value in the REPL, what do you think the results of each of the following will be? Include workings. Remember to validate your answers with the REPL
+
+- `10 + waxOn`
 
   ```
   result = 10 + waxOn
@@ -79,7 +81,7 @@ Now that waxOn is a value in the REPL, what do you think the results of each of 
   result = 1135
   ```
 
-2. `(+10) waxOn`
+- `(+10) waxOn`
 
   ```
   result = (+10) waxOn
@@ -94,7 +96,7 @@ Now that waxOn is a value in the REPL, what do you think the results of each of 
   result = 1135
   ```
 
-3. `(-) 15 waxOn`
+- `(-) 15 waxOn`
 
   ```
   result = (-) 15 waxOn
@@ -109,7 +111,7 @@ Now that waxOn is a value in the REPL, what do you think the results of each of 
   result = -1110
   ```
 
-4. `(-) waxOn 15`
+- `(-) waxOn 15`
 
   ```
   result = (-) waxOn 15
@@ -123,3 +125,4 @@ Now that waxOn is a value in the REPL, what do you think the results of each of 
   result = 1125 - 15
   result = 1110
   ```
+2. 
