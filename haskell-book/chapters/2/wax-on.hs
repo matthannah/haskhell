@@ -6,3 +6,5 @@ waxOn     = x * 5
         z = 7
 
 triple x = x * 3
+
+waxOff x = triple x
