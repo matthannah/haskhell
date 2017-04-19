@@ -125,5 +125,35 @@ Prelude> waxOn = x * 5
    1125 - 15
    1110
   ```
+2. While the REPL has waxOn in it's session, re-enter the triple function from earlier:
+
   ```
-2. 
+  let triple x = x * 3
+  ```
+
+3. What will happen when we enter the command `triple waxOn`?
+
+  ```
+  triple waxOn
+  waxOn * 3 -- apply triple to waxOn
+  (x * 5) * 3 -- sub in waxOn
+  ((y ^ 2) * 5) * 3 -- sub in x
+  (((z + 8) ^ 2) * 5) * 3 -- sub in y
+  (((7 + 8) ^ 2) * 5) * 3 -- sub in z
+  (((15) ^ 2) * 5) * 3 -- solve
+  ((225) * 5) 15 * 3 -- solve
+  1125 * 3 -- solve
+  3375
+  ```
+
+4. Rewrite waxOn as an expression with a `where` clause in a source code file
+
+  ```
+  -- wax-on.hs
+
+  Prelude> :l wax-on
+  [1 of 1] Compiling WaxOn            ( wax-on.hs, interpreted )
+  Ok, modules loaded: WaxOn.
+  *WaxOn> waxOn
+  1125
+  ```
