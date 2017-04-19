@@ -169,3 +169,13 @@ Prelude> waxOn = x * 5
   *WaxOn> triple 3
   9
   ```
+
+6. Add the waxOff function; `waxOff x = triple x`
+
+  ```
+  Prelude> :l wax-on
+  [1 of 1] Compiling WaxOn            ( wax-on.hs, interpreted )
+  Ok, modules loaded: WaxOn.
+  *WaxOn> waxOff waxOn
+  3375
+  ```
