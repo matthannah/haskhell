@@ -70,59 +70,60 @@ Prelude> waxOn = x * 5
 - `10 + waxOn`
 
   ```
-  result = 10 + waxOn
-  result = 10 + (x * 5) -- sub in waxOn
-  result = 10 + ((y ^ 2) * 5) -- sub in x
-  result = 10 + (((z + 8) ^ 2) * 5) -- sub in y
-  result = 10 + (((7 + 8) ^ 2) * 5) -- sub in z
-  result = 10 + (((15) ^ 2) * 5) -- solve
-  result = 10 + ((225) * 5) -- solve
-  result = 10 + (1125) -- solve
-  result = 1135
+   10 + waxOn
+   10 + (x * 5) -- sub in waxOn
+   10 + ((y ^ 2) * 5) -- sub in x
+   10 + (((z + 8) ^ 2) * 5) -- sub in y
+   10 + (((7 + 8) ^ 2) * 5) -- sub in z
+   10 + (((15) ^ 2) * 5) -- solve
+   10 + ((225) * 5) -- solve
+   10 + (1125) -- solve
+   1135
   ```
 
 - `(+10) waxOn`
 
   ```
-  result = (+10) waxOn
-  result = (+10) x * 5 -- sub in waxOn
-  result = (+10) (y ^ 2) * 5 -- sub in x
-  result = (+10) ((z + 8) ^ 2) * 5 -- sub in y
-  result = (+10) ((7 + 8) ^ 2) * 5 -- sub in z
-  result = (+10) ((15) ^ 2) * 5 -- solve
-  result = (+10) (225) * 5 -- solve
-  result = (+10) 1125 -- solve
-  result = 10 + 1125
-  result = 1135
+   (+10) waxOn
+   (+10) x * 5 -- sub in waxOn
+   (+10) (y ^ 2) * 5 -- sub in x
+   (+10) ((z + 8) ^ 2) * 5 -- sub in y
+   (+10) ((7 + 8) ^ 2) * 5 -- sub in z
+   (+10) ((15) ^ 2) * 5 -- solve
+   (+10) (225) * 5 -- solve
+   (+10) 1125 -- solve
+   10 + 1125
+   1135
   ```
 
 - `(-) 15 waxOn`
 
   ```
-  result = (-) 15 waxOn
-  result = (-) 15 (x * 5) -- sub in waxOn
-  result = (-) 15 ((y ^ 2) * 5) -- sub in x
-  result = (-) 15 (((z + 8) ^ 2) * 5) -- sub in y
-  result = (-) 15 (((7 + 8) ^ 2) * 5) -- sub in z
-  result = (-) 15 (((15) ^ 2) * 5) -- solve
-  result = (-) 15 ((225) * 5) -- solve
-  result = (-) 15 1125 -- solve
-  result = 15 - 1125
-  result = -1110
+   (-) 15 waxOn
+   (-) 15 (x * 5) -- sub in waxOn
+   (-) 15 ((y ^ 2) * 5) -- sub in x
+   (-) 15 (((z + 8) ^ 2) * 5) -- sub in y
+   (-) 15 (((7 + 8) ^ 2) * 5) -- sub in z
+   (-) 15 (((15) ^ 2) * 5) -- solve
+   (-) 15 ((225) * 5) -- solve
+   (-) 15 1125 -- solve
+   15 - 1125
+   -1110
   ```
 
 - `(-) waxOn 15`
 
   ```
-  result = (-) waxOn 15
-  result = (-) (x * 5) 15 -- sub in waxOn
-  result = (-) ((y ^ 2) * 5) 15 -- sub in x
-  result = (-) (((z + 8) ^ 2) * 5) 15 -- sub in y
-  result = (-) (((7 + 8) ^ 2) * 5) 15 -- sub in z
-  result = (-) (((15) ^ 2) * 5) 15 -- solve
-  result = (-) ((225) * 5) 15 -- solve
-  result = (-) 1125 15 -- solve
-  result = 1125 - 15
-  result = 1110
+   (-) waxOn 15
+   (-) (x * 5) 15 -- sub in waxOn
+   (-) ((y ^ 2) * 5) 15 -- sub in x
+   (-) (((z + 8) ^ 2) * 5) 15 -- sub in y
+   (-) (((7 + 8) ^ 2) * 5) 15 -- sub in z
+   (-) (((15) ^ 2) * 5) 15 -- solve
+   (-) ((225) * 5) 15 -- solve
+   (-) 1125 15 -- solve
+   1125 - 15
+   1110
+  ```
   ```
 2. 
