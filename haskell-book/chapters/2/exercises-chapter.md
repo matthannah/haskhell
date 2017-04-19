@@ -157,3 +157,15 @@ Prelude> waxOn = x * 5
   *WaxOn> waxOn
   1125
   ```
+
+5. Add the triple function to the source code file
+
+  ```
+  -- wax-on.hs
+
+  Prelude> :l wax-on
+  [1 of 1] Compiling WaxOn            ( wax-on.hs, interpreted )
+  Ok, modules loaded: WaxOn.
+  *WaxOn> triple 3
+  9
+  ```
