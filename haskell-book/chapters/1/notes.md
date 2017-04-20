@@ -1,4 +1,4 @@
-# Notes
+# Notes - All You need is lambda
 **Functional Programming**
 - Programs are a combination of expressions
 - Expressions include concrete values, variables and functions

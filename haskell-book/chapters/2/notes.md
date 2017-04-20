@@ -1,4 +1,4 @@
-# Notes
+# Notes - Hello, Haskell
 ## Development Environment
 **Stack**
 - Program for developing Haskell projects
