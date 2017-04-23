@@ -18,3 +18,24 @@ Prelude> :type "Hello!"
 - the `[]` is syntactic sugar for a list
 
 ## Printing simple Strings
+```
+Prelude> print "hello world!"
+"hello world!"
+```
+- The print command tells the REPL to print the string to the display
+- Some other printing commands which have slightly different results:
+```
+Prelude> putStrLn "hello world!"
+hello world!
+Prelude>
+Prelude> putStr "hello world!"
+hello world!Prelude>
+```
+- Using `print1.hs` which prints in source code;
+```
+Prelude> :l print1
+[1 of 1] Compiling Print1           ( print1.hs, interpreted )
+Ok, modules loaded: Print1.
+*Print1> main
+hello world!
+```
