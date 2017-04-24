@@ -61,3 +61,16 @@ Count to four for me:
 one, two, three, and four!
 ```
 - Note that `print2.hs` main block uses the `do` syntax, which allows for sequencing actions (more on this in later chapters!)
+
+## String Concatenation
+- Concatenation means to link together, in the context of strings, it means joining two together to form a single string
+- To concat strings we can use the `++` operator or the `concat` function
+- Checkout the `print3.hs` source for some examples:
+```
+Prelude> :l print3
+[1 of 1] Compiling Print3           ( print3.hs, interpreted )
+Ok, modules loaded: Print3.
+*Print3> main
+hello world!
+hello world!
+```
