@@ -102,3 +102,38 @@ concat :: [[a]] -> [a]
 ```
 - As you can see the type `a` must be kept constant, thus the following expression won't work: `concat [[1, 2, 3], "hello"]`, since we have `Num` and `Char` types
 - This will work: `concat ["hey", [' ', 'm', 'a', 'n']]` since the types match; remember `"hey"` is a type alias for list of char, which has the same type as `[' ', 'm', 'a', 'n']`
+
+## More List functions
+- String is a specialized type of list, you can use standard list operations on strings as well
+- `:` this operator called "cons", constructs a list;
+```
+Prelude> 'H' : "ello"
+"Hello"
+```
+- `head` returns the head/first element of the list, note it will return a Char!!
+```
+Prelude> head "Hello"
+'H'
+```
+- `tail` returns the list with the head chopped off:
+```
+Prelude> head "Hello"
+"ello"
+```
+- `take` returns the specified number of elements from the list, starting from the left
+```
+Prelude> take 4 "Hello"
+"Hell"
+```
+- `drop` returns the list after the specified number of elements have been dropped from the left
+```
+Prelude> drop 1 "Hello"
+"ello"
+```
+- `!!` returns the element at index specified by the number given as an input
+```
+Prelude> "Hello" !! 1
+'e'
+```
+- WARNING: Some of these functions are considered UNSAFE, they do not cover cases of failure such as indexing list that is out of range: `"hey" !! 5`; these cases will throw exceptions or error messages!
+- We will cover safer versions of these functions later in the book :)
