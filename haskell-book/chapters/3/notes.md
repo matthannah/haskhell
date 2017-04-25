@@ -79,3 +79,25 @@ hello world!
 - When a compiler reads the file, it sees all the top level declarations no matter what order they are in
 - Top level declarations are not nested in anything else; they are in scope throughout the whole module
 - Local declarations are nested in some expression, and are not visible to outside that expression
+
+## Types of Concatenation functions
+- Taking a look at the types of `(++)` and `concat` using `:t` command in prelude:
+```
+Prelude> :t (++)
+(++) :: [a] -> [a] -> [a]
+Prelude> :t concat
+concat :: [[a]] -> [a]
+```
+- The type of `concat` says we can have a list of lists of type `a` and it will return a list of type `a`
+- The type of `(++)` says we can have a list of type `a` and a list of type `a` as inputs and it will return a list of type `a`
+- The type variable `a` in `[a]` is polymorphic. It can be any type, so for a string in `concat` we would have: `[[Char]] -> [Char]`
+- To read the `:t` output easier we can break it down:
+```
+(++) :: [a] -> [a] -> [a]
+(++) - this is the function name
+::   - this means 'has the type', anything after this is about type definition
+[a]  - take an argument of type [a], which is a list of elements of type a, the function doesn't know what the type of a is, and it doesn't need to know
+[a]  - take another argument of type [a]
+[a]  - return a result of type [a]
+```
+- As you can see the type `a` must be kept constant, thus the following expression won't work: `concat [[1, 2, 3], ["hello"]]`, since we have `Num` and `Char` types
