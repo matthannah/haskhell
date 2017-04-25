@@ -100,4 +100,4 @@ concat :: [[a]] -> [a]
 [a]  - take another argument of type [a]
 [a]  - return a result of type [a]
 ```
-- As you can see the type `a` must be kept constant, thus the following expression won't work: `concat [[1, 2, 3], ["hello"]]`, since we have `Num` and `Char` types
+- As you can see the type `a` must be kept constant, thus the following expression won't work: `concat [[1, 2, 3], "hello"]`, since we have `Num` and `Char` types
