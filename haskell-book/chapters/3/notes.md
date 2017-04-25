@@ -74,3 +74,8 @@ Ok, modules loaded: Print3.
 hello world!
 hello world!
 ```
+
+## Top-level versus local definitions
+- When a compiler reads the file, it sees all the top level declarations no matter what order they are in
+- Top level declarations are not nested in anything else; they are in scope throughout the whole module
+- Local declarations are nested in some expression, and are not visible to outside that expression
