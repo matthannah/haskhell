@@ -57,6 +57,7 @@ Final chapter exercises, use the REPL to validate answers
     "y"
 
     (!!) "Curry is awesome!" 4 : ""
+    [((!!) "Curry is awesome!" 4)]
 
   c)
     -- Given
@@ -65,4 +66,20 @@ Final chapter exercises, use the REPL to validate answers
     "awesome!"
 
     drop 9 "Curry is awesome!"
+  ```
+
+2. Rewrite each of transformations above as general functions
+
+  ```
+  see functionsQ2.hs:
+
+  Prelude> :l functionsQ2
+  [1 of 1] Compiling Q2               ( functionsQ2.hs, interpreted )
+  Ok, modules loaded: Q2.
+  *Q2> addBang "Yo"
+  "Yo!"
+  *Q2> index4 "Cheese"
+  's'
+  *Q2> drop9 "Hey dude lol this function"
+  "lol this function"
   ```
