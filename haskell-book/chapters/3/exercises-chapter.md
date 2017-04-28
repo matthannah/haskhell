@@ -36,3 +36,33 @@ Final chapter exercises, use the REPL to validate answers
   (take 3 "Julie") ++ (tail "yes") => "Jules"
   concat [tail [1, 2, 3], tail [4, 5, 6], tail [7, 8, 9]] => [2, 3, 5, 6, 8, 9]
   ```
+
+
+## Building Functions
+1. Write expressions to perform the following transformations, just with the functions you’ve seen in this chapter
+
+  ```
+  a)
+    -- Given
+    "Curry is awesome"
+    -- Return
+    "Curry is awesome!"
+
+    concat ["Curry is awesome", "!"]
+
+  b)
+    -- Given
+    "Curry is awesome!"
+    -- Return
+    "y"
+
+    (!!) "Curry is awesome!" 4 : ""
+
+  c)
+    -- Given
+    "Curry is awesome!"
+    -- Return
+    "awesome!"
+
+    drop 9 "Curry is awesome!"
+  ```
