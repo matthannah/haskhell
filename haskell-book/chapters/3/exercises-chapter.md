@@ -95,3 +95,17 @@ Final chapter exercises, use the REPL to validate answers
   *Q3> thirdLetter "hey!"
   'y'
   ```
+
+4. Create a function to return a certain character from the string "Curry is awesome!" with an Int as in input
+
+  ```
+  Prelude> :l functionsQ4
+  [1 of 1] Compiling Q4               ( functionsQ4.hs, interpreted )
+  Ok, modules loaded: Q4.
+  *Q4> letterIndex 5
+  ' '
+  *Q4> letterIndex 9
+  'a'
+  *Q4> letterIndex 0
+  'C'
+  ```
