@@ -84,7 +84,7 @@ Final chapter exercises, use the REPL to validate answers
   "lol this function"
   ```
 
-3. Write a function in source of type `String -> Char` which returns the third character in a String
+3. Write a function in source of type `String -> Char` which returns the third `Char` in a `String`
 
   ```
   see functionsQ3.hs:
@@ -96,7 +96,7 @@ Final chapter exercises, use the REPL to validate answers
   'y'
   ```
 
-4. Create a function to return a certain character from the string "Curry is awesome!" with an Int as in input
+4. Create a function to return a certain character from the string `"Curry is awesome!"` with an `Int` as in input
 
   ```
   Prelude> :l functionsQ4
@@ -108,4 +108,14 @@ Final chapter exercises, use the REPL to validate answers
   'a'
   *Q4> letterIndex 0
   'C'
+  ```
+
+5. Create a function named `rvrs` which uses only `take` and `drop` to take the string `"Curry is awesome!"` and return the string `"awesome is Curry"`
+
+  ```
+  Prelude> :l functionsQ5
+  [1 of 1] Compiling Q5               ( functionsQ5.hs, interpreted )
+  Ok, modules loaded: Q5.
+  *Q5> rvrs "Curry is awesome"
+  "awesome is Curry"
   ```
