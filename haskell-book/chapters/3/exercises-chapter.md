@@ -83,3 +83,15 @@ Final chapter exercises, use the REPL to validate answers
   *Q2> drop9 "Hey dude lol this function"
   "lol this function"
   ```
+
+3. Write a function in source of type `String -> Char` which returns the third character in a String
+
+  ```
+  see functionsQ3.hs:
+
+  Prelude> :l functionsQ3
+  [1 of 1] Compiling Q3               ( functionsQ3.hs, interpreted )
+  Ok, modules loaded: Q3.
+  *Q3> thirdLetter "hey!"
+  'y'
+  ```
