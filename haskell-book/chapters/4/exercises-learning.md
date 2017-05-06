@@ -20,8 +20,34 @@ Note that the `deriving Show` allows values of that type to be printed to the sc
 3. If we are writing a function `changeMood`, it should act like `not` in that it should return the other value of the same type it's given, what's wrong with the type signature `changeMood :: Mood -> Woot` in this context?
 
   ```
-  Woot is not a type, instead it is a value of the type Mood
-  the type signature should instead look like:
+  Woot is not a type, instead it is a value of the type Mood, type signatures should declare only types; the type signature should instead look like:
 
   changeMood :: Mood -> Mood
+  ```
+
+  4. Now we want to write the changeMood function, fix any mistakes and complete the function.
+  Note that in the function we are `pattern matching`; defining a function by matching on a data constructor, or value, and describing the behaviour the should have based on which value it matches. The `_` denotes catch all
+
+    ```
+    changeMood Mood = Woot
+    changeMood _ = Blah
+
+    Solution:
+    changeMood :: Mood -> Mood
+    changeMood Woot = Blah
+    changeMood Blah = Woot
+    ```
+
+5. Implement `changeMood` in a source file and make sure it works in the REPL
+
+  ```
+  See change-mood.hs:
+
+  Prelude> :l change-mood
+  [1 of 1] Compiling ChangeMood       ( change-mood.hs, interpreted )
+  Ok, modules loaded: ChangeMood.
+  *ChangeMood> changeMood Blah
+  Woot
+  *ChangeMood> changeMood Woot
+  Blah
   ```
