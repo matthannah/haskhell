@@ -27,3 +27,7 @@
 - `Rational`: a fractional number that represents a ratio of two integers; the value `1/2 :: Rational` will be value carrying two integers representing the numerator `1` and the denominator `2`. `Rational` is arbitrarily precise but not as efficient as `Scientific`
 - `Scientific`: a space efficient and almost arbitrary precision scientific number type; represented in scientific notation (such as 1.23x10^6), it stores the coefficient as an `Integer` and the exponent as an `Int`
 - All of these numeric datatypes  all have instances of a typeclass called `Num`
+- Typeclasses add functionality to types; for instance the operators `(+)`, `(-)`, and `(*)` are available in the `Num` typeclass as well as other functions
+- You can find out the minimum and maximum bounds of numeric types using `minBound` and `maxBound` respectively
+
+## Comparing Values
