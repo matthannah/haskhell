@@ -31,3 +31,15 @@
 - You can find out the minimum and maximum bounds of numeric types using `minBound` and `maxBound` respectively
 
 ## Comparing Values
+- We can compare values to determine whether they are equal (`==`), not equal (`/=`), greater than (`>`), greater than or equal (`>=`), less than (`<`), less than or equal (`<=`)
+- Looking at the types for `<` and `==` we see that they have typeclass constraints:
+```
+Prelude> :t (==)
+(==) :: Eq a => a -> a -> Bool
+Prelude> :t (<)
+(<) :: Ord a => a -> a -> Bool
+```
+- `Eq` is a typeclass that includes everything that can be compared and determined to be equal in value
+- `Ord` is a typeclass that includes all things that can be ordered
+- Notice the `a`, this means than it doesn't matter what type you give it, as long as it adheres to the typeclass constraints it can be operated on: `Integers`, `Strings` etc; thus they are polymorphic.
+- We can even use the comparisons on lists of values, as long as the items in the list are instances of the specific typeclass the operator requires; `[1, 2] == [1, 2] > True`
