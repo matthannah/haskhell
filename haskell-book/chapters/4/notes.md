@@ -43,3 +43,7 @@ Prelude> :t (<)
 - `Ord` is a typeclass that includes all things that can be ordered
 - Notice the `a`, this means than it doesn't matter what type you give it, as long as it adheres to the typeclass constraints it can be operated on: `Integers`, `Strings` etc; thus they are polymorphic.
 - We can even use the comparisons on lists of values, as long as the items in the list are instances of the specific typeclass the operator requires; `[1, 2] == [1, 2] > True`
+
+## Boolean logic
+- `&&` is conjunction and is an infix operator
+- `||` is disjunction and is an infix operator
