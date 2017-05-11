@@ -51,3 +51,23 @@ Note that the `deriving Show` allows values of that type to be printed to the sc
   *ChangeMood> changeMood Woot
   Blah
   ```
+
+## Find the mistakes
+Some of these lines of code won't compile, identify ones that won't and fix them
+1. `not True && True`
+
+  ```
+  not True && True -- There is nothing wrong with this expression
+  ```
+
+2. `not (x = 6)`
+
+  ```
+  
+  ```
+
+3. `(1 * 2) > 5`
+
+4. `[Merry] > [Happy]`
+
+5. `[1, 2, 3] ++ "look at me!"`
