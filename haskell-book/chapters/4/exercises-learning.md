@@ -63,11 +63,23 @@ Some of these lines of code won't compile, identify ones that won't and fix them
 2. `not (x = 6)`
 
   ```
-  
+  let x = 6 in not (x == 6) - x was not in scope, and 'not' expects a 'bool'
   ```
 
 3. `(1 * 2) > 5`
 
+```
+(1 * 2) > 5 - There is nothing wrong with this expression
+```
+
 4. `[Merry] > [Happy]`
 
+```
+"Merry" > "Happy" - [Merry] and [Happy] is not valid constructors for strings
+```
+
 5. `[1, 2, 3] ++ "look at me!"`
+
+```
+['1', '2', '3'] ++ " look at me!" - Can not create a list of Num and Char types
+```
