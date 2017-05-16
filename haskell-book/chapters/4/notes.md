@@ -47,3 +47,19 @@ Prelude> :t (<)
 ## Boolean logic
 - `&&` is conjunction and is an infix operator
 - `||` is disjunction and is an infix operator
+
+## Conditionals with if-then-else
+- Haskell doesn't have `if` statements, instead it has `if` expressions that work with the `Bool` datatype:
+```
+Prelude> if True then "I get returned!" else "I won't..."
+"I get returned!"
+Prelude> if False then "I won't..." else "I get returned!"
+"I get returned!"
+```
+- As you can see depending on the `Bool` the expression returns either the `if` expression or the `else` expression, therefore we can assign variables to the `if-then-else` expressions:
+```
+x :: Integer
+x = if True then 2 else 1
+
+-- x will equal 2
+```
