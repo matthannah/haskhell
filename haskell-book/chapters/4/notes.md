@@ -63,3 +63,17 @@ x = if True then 2 else 1
 
 -- x will equal 2
 ```
+
+## Tuples
+- The tuple is a type that allows you to store and pass around multiple values in a single value
+- Values inside tuples do not have to be the same type
+- A tuple with two values is a two-tuple, three values a three-tuple and so on; this is a tuples arity
+- The tuple constructor is `(,)`:
+```
+Prelude> let x = (,) 2 True
+Prelude> x
+(2, True)
+Prelude> let x = (2, True)
+Prelude> x
+(2, True)
+```
