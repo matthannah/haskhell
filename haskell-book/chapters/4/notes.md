@@ -77,3 +77,23 @@ Prelude> let x = (2, True)
 Prelude> x
 (2, True)
 ```
+- The datatype declaration for tuples:
+```
+Prelude> :info (,)
+data (,) a b = (,) a b
+```
+- We can see that it takes 2 parameters `a` and `b`; these can be any type, even the same, note that the tuple is polymorphic
+- Comparing the datatype to `Bool` we can see that it is a product type (it takes 2 parameters to produce a value), whereas `Bool` is a sum type, it takes either `True` or `False`; conjunction vs disjunction
+- The `tuple` comes with 2 convenience functions for getting the first and the second value:
+```
+fst :: (a, b) -> a
+snd :: (a, b) -> b
+```
+- As you can see they take a two-tuple and return `fst` or `snd` value; Note that we can write our own functions for getting values from tuples, the syntax is `pattern matching`:
+```
+thrd :: (a, b, c) -> c -- pattern matching
+frth :: (_, _, _, a) -> a -- we can use _ to match anything
+
+```
+
+## Lists
