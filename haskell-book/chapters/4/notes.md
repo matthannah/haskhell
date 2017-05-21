@@ -93,7 +93,6 @@ snd :: (a, b) -> b
 ```
 thrd :: (a, b, c) -> c -- pattern matching
 frth :: (_, _, _, a) -> a -- we can use _ to match anything
-
 ```
 
 ## Lists
