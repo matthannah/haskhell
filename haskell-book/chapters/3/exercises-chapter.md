@@ -56,6 +56,7 @@ Final chapter exercises, use the REPL to validate answers
     -- Return
     "y"
 
+    **Revised** drop 4 (take 5 "Curry is awesome!") -- This is the best way to do it!
     (!!) "Curry is awesome!" 4 : "" -- Remember that : is the 'cons' operator (consructor)
     [((!!) "Curry is awesome!" 4)] -- Alternatively surround expression in parentheses and []
 
