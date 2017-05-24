@@ -96,3 +96,7 @@ frth :: (_, _, _, a) -> a -- we can use _ to match anything
 ```
 
 ## Lists
+- As we know lists are a datatype that is used to contain multiple values
+- All data in a list must be the same type
+- All lists have their own distinct `[]` syntax, used as the type constructor and at the term level to express list values
+- The number of elements in a list can change as you operate on the list, unlike tuples where the arity is set in the type and immutable
