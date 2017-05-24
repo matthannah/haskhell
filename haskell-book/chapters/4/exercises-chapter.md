@@ -71,13 +71,13 @@ allAwesome = [awesome, alsoAwesome]
 9. Write a function to return the absolute value of a number using `if-then-else`
 
   ```
-  myAbs :: Integer => Integer
+  myAbs :: Integer -> Integer
   ```
 
 10. Fill in the definition of the following function using `fst` and `snd`
-
+q
   ```
-  f :: (a,b) => (c,d) => ((b,d), (a,c))
+  f :: (a,b) -> (c,d) -> ((b,d), (a,c))
   ```
 
 ## Correcting syntax
@@ -109,4 +109,49 @@ Fix the following syntax and test it
   f (a b) = A
   ```
 
-  
+## Match the function names to their types
+1. Which of the following types is the type of `show`?
+
+  ```
+  show a => a -> String
+
+  Show a -> a -> String    
+
+  Show a => a -> String
+  ```
+
+2. Which of the following types is the type of `(==)`?
+
+  ```
+  a -> a -> Bool
+
+  Eq a => a -> a -> Bool
+
+  Eq a -> a -> a -> Bool
+
+  Eq a => A -> Bool
+  ```
+
+3. Which of the following types is the type of `fst`?
+
+  ```
+  (a, b) -> a    
+
+  b -> a
+
+  (a, b) -> b
+  ```
+
+4. Which of the following types is the type of `(+)`?
+
+  ```
+  (+) :: Num a -> a -> a -> Bool    
+
+  (+) :: Num a => a -> a -> Bool
+
+  (+) :: num a => a -> a -> a    
+
+  (+) :: Num a => a -> a -> a
+
+  (+) :: a -> a -> a
+  ```
