@@ -79,3 +79,34 @@ allAwesome = [awesome, alsoAwesome]
   ```
   f :: (a,b) => (c,d) => ((b,d), (a,c))
   ```
+
+## Correcting syntax
+Fix the following syntax and test it
+
+1. Here we want a function that adds 1 to the length of a string argument and returns a result
+
+  ```
+  x = (+)
+
+  F xs = w 'x' 1
+    where w = length xs
+  ```
+2. This is supposed to be the identity function `id`
+
+  ```
+  \ X = x
+  ```
+
+3. When fixed, this function will return 1 from the value [1, 2, 3] **Hint** You may need to refresh your memory on variables conventions in "Hello Haskell"
+
+  ```
+  \ x : xs -> x
+  ```
+
+4. When fixed this function will return 1 from the value (1, 2)
+
+  ```
+  f (a b) = A
+  ```
+
+  
