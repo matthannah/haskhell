@@ -34,3 +34,5 @@ sumDigits (x:xs)
 
 validate :: Integer -> Bool
 validate x = (sumDigits $ doubleEveryOther $ toDigits x) `rem` 10 == 0
+-- we can use composing here and eta reduction here too!
+-- validate = (==0).(`rem`10).sumDigits.doubleEveryOther.toDigits
