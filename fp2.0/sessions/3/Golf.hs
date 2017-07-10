@@ -25,3 +25,28 @@ localMaxima (x:y:z:xs)
   | y > x && y > z = y : localMaxima (z:xs)
   | otherwise = localMaxima (y:z:xs)
 localMaxima xs = []
+
+histogram :: [Integer] -> String
+histogram xs = tallyToString xs ++ "\n==========\n0123456789\n"
+
+tallyToString :: [Integer] -> String
+tallyToString xs = case (filter (> 0) xs) of
+    [] -> []
+    _  -> tallyToString (map (subtract 1) xs) ++ tallyLine xs
+
+tallyLine :: [Integer] -> String
+tallyLine [] = "\n"
+tallyLine (z:zs)
+  | z > 0 = '*' : tallyLine zs
+  | otherwise = ' ' : tallyLine zs
+
+tally :: [Integer] -> [Integer]
+tally xs = go [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] xs
+  where
+    go ys (z:zs) = go (addOneAtIndex z ys) zs
+    go ys [] = ys
+
+addOneAtIndex :: Integer -> [Integer] -> [Integer]
+addOneAtIndex 0 (x:xs) = x + 1 : xs
+addOneAtIndex n (x:xs) = x : addOneAtIndex (n - 1) xs
+addOneAtIndex n [] = []
