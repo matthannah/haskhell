@@ -52,14 +52,12 @@ parse l = parse' (lines l)
 insert :: LogMessage -> MessageTree -> MessageTree
 insert (Unknown _) tree = tree
 insert message Leaf = Node Leaf message Leaf
-insert lm1 (Node left lm2 right)
-  | before lm1 lm2 = Node (insert lm1 left) lm2 right
-  | otherwise      = Node left lm2 (insert lm1 right)
-  where
-    before :: LogMessage -> LogMessage -> Bool
-    before (LogMessage _ t1 _) (LogMessage _ t2 _) = t1 < t2
+insert lm1@(LogMessage _ t1 _) (Node left lm2@(LogMessage _ t2 _) right)
+  | t1 < t2   = Node (insert lm1 left) lm2 right
+  | otherwise = Node left lm2 (insert lm1 right)
 
 build :: [LogMessage] -> MessageTree
+build [] = Leaf
 build (x:xs) = go xs (insert x Leaf)
   where
     go :: [LogMessage] -> MessageTree -> MessageTree
@@ -71,12 +69,12 @@ inOrder Leaf = []
 inOrder (Node left lm right) = (inOrder left) ++ (lm : (inOrder right))
 
 whatWentWrong :: [LogMessage] -> [String] -- errors severity of 50 or greater
-whatWentWrong x = whatWentWrong' $ inOrder $ build x
+whatWentWrong xs = whatWentWrong' $ inOrder $ build xs
   where
     whatWentWrong' [] = []
-    whatWentWrong' (x:xs)
-      | relevantLogMessage x = (extractMessage x) : whatWentWrong' xs
-      | otherwise = whatWentWrong' xs
+    whatWentWrong' (y:ys)
+      | relevantLogMessage y = (extractMessage y) : whatWentWrong' ys
+      | otherwise = whatWentWrong' ys
     relevantLogMessage (LogMessage (Error level) _ _) = level >= 50
     relevantLogMessage _ = False
     extractMessage (LogMessage _ _ message) = message
