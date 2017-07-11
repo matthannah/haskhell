@@ -27,7 +27,7 @@ localMaxima (x:y:z:xs)
 localMaxima xs = []
 
 histogram :: [Integer] -> String
-histogram xs = tallyToString xs ++ "\n==========\n0123456789\n"
+histogram xs = tallyToString (tally xs) ++ "==========\n0123456789\n"
 
 tallyToString :: [Integer] -> String
 tallyToString xs = case (filter (> 0) xs) of
