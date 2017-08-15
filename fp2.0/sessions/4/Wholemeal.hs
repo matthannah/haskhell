@@ -25,8 +25,32 @@ foldTree = foldr insert Leaf
 
 insert :: a -> Tree a -> Tree a
 insert a Leaf = Node 0 Leaf a Leaf
--- TODO: Finish this
+insert a t@(Node h l v r)
+  | numNodes l < numNodes r = Node (height h) (insert a l) v r
+  | otherwise               = Node (height h) l v (insert a r)
+    where
+      height h = (bool h (h + 1) (isFull t))
 
-height :: Tree a -> Integer
-height Leaf = 0
-height (Node h _ _ _) = h
+isFull :: Tree a -> Bool
+isFull Leaf = True
+isFull (Node _ Leaf v Leaf) = True
+isFull (Node _ l@(Node _ _ _ _) v r@(Node _ _ _ _)) = (isFull l) && (isFull r)
+isFull _ = False
+
+numNodes :: Tree a -> Integer
+numNodes Leaf = 0
+numNodes (Node _ l _ r) = 1 + numNodes l + numNodes r
+
+-- Code for showing the tree
+
+buildListOfValue :: Integer -> a -> [a]
+buildListOfValue len val
+  | len < 1   = []
+  | otherwise = val : (buildListOfValue (len - 1) val)
+
+treeToString :: Show a => Tree a -> String
+treeToString Leaf = ""
+treeToString t@(Node h _ _ _) = go h t
+  where
+    go _ Leaf = ""
+    go i (Node _ l v r) = (go (i - 1) l) ++ (buildListOfValue (8 * i) ' ') ++ (show v) ++ "\n" ++ (go (i - 1) r)
