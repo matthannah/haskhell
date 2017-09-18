@@ -64,6 +64,12 @@ build (x:xs) = go xs (insert x Leaf)
     go (logMessage:logMessages) mt = go logMessages (insert logMessage mt)
     go [] mt = mt
 
+-- build [] = Leaf
+-- build (x:xs) = insert x (build xs) <-- better
+
+-- build xs = foldr insert Leaf xs <--- better
+-- build = foldr insert Leaf <--- best solution
+
 inOrder :: MessageTree -> [LogMessage]
 inOrder Leaf = []
 inOrder (Node left lm right) = (inOrder left) ++ (lm : (inOrder right))
