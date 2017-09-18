@@ -9,7 +9,7 @@ e y n
 -- localMaxima [2,9,5,6,1] == [9,6]
 localMaxima :: [Integer] -> [Integer]
 localMaxima (x:t@(y:z:a))
-  | y > z && y > x = y : localMaxima t
+  | y > z && y > x = y : localMaxima (z:a)
   | otherwise = localMaxima t
 localMaxima xs = []
 
