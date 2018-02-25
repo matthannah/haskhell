@@ -35,8 +35,10 @@ treeFold f Node { rootLabel = r, subForest = s } = f r (map (treeFold f) s)
 nextLevel :: Employee -> [(GuestList, GuestList)] -> (GuestList, GuestList)
 nextLevel e gls = (withBoss, withoutBoss)
   where
+    -- We should append all GuestLists of the sub trees without their bosses, since none of them have fun (second)
     withBoss = glCons e (foldr mappend (GL [] 0) (map snd gls))
-    withoutBoss = foldr mappend (GL [] 0) (map (\(gl1, gl2) -> moreFun gl1 gl2) gls) -- this needs to be either fst or snd, depending on which is more fun
+    -- We should append all best GuestLists of the sub trees, since we can choose between them (first or second)
+    withoutBoss = foldr mappend (GL [] 0) (map (\(gl1, gl2) -> moreFun gl1 gl2) gls)
     -- TODO: can we leverage the Ord type class? to replace the shitty moreFun call above?
 
 maxFun :: Tree Employee -> GuestList
