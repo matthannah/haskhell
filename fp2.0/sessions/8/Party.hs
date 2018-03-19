@@ -52,5 +52,5 @@ glFormat (GL es f) = "Total fun: " ++ show f ++ "\n" ++
 
 -- >>= bind
 main :: IO ()
-main = readFile "company.txt" >>= readIO >>= (pure . maxFun) >>= (pure . glFormat) >>= putStrLn
+main = readFile "company.txt" >>= readIO >>= (pure . glFormat . maxFun) >>= putStrLn
 -- TODO: This is definitely wrong... i don't understand monads lol.. yet ;)
