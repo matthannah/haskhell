@@ -41,17 +41,20 @@ instance Applicative (State s) where
 
 -- (>>=) :: Monad m => m a -> (a -> m b) -> m b
 -- State (rs :: s -> (a, s)) -> (a -> (State (rs :: s -> (b, s))) -> State (rs :: s -> (b, s))
--- TODO Refactor this
+-- instance Monad (State s) where
+--   return a = State (\s -> (a, s))
+--
+--   (State rs1) >>= f = State go
+--     where
+--       go s = (b, s'')
+--         where
+--           (a, s') = rs1 s
+--           st = f a
+--           (b, s'') = runState st s' -- we need to preserve the s, which is why we call runState on the result of f a
+
 instance Monad (State s) where
   return a = State (\s -> (a, s))
-
-  (State rs1) >>= f = State go
-    where
-      go s = (b, s'')
-        where
-          (a, s') = rs1 s
-          st = f a
-          (b, s'') = runState st s' -- we need to preserve the s, which is why we call runState on the result of f a
+  (State rs1) >>= f = State ((\(a, s) -> runState (f a) s) . rs1)
 
 -- run rs1 which will give us a result (a, s)
 -- apply the a in (a, s) to f
