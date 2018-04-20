@@ -24,20 +24,21 @@ instance Functor (State s) where
   fmap f (State rs) = State ((first f) . rs)
 
 -- TODO Refactor this
-instance Applicative (State s) where
-  pure a = State (\s -> (a, s))
-
-  (State rs1) <*> (State rs2) = State go
-    where
-      go s = (f a, s'')
-        where
-          (f, s') = rs1 s
-          (a, s'') = rs2 s'
+-- instance Applicative (State s) where
+--   pure a = State (\s -> (a, s))
+--
+--   (State rs1) <*> (State rs2) = State go
+--     where
+--       go s = (f a, s'')
+--         where
+--           (f, s') = rs1 s
+--           (a, s'') = rs2 s'
 
 -- Remember we can use fmap in here!
 -- (<*>) :: Applicative f => State s (a -> b) -> State a -> State b
--- instance Applicative (State s) where
---   (State rs1) <*> (State rs2) =
+instance Applicative (State s) where
+  pure a = State (\s -> (a, s))
+  (State rs1) <*> (State rs2) = State ((\(f, s) -> first f (rs2 s)) . rs1)
 
 -- (>>=) :: Monad m => m a -> (a -> m b) -> m b
 -- State (rs :: s -> (a, s)) -> (a -> (State (rs :: s -> (b, s))) -> State (rs :: s -> (b, s))
