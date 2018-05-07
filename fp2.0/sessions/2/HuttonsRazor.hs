@@ -4,10 +4,7 @@ data Expr
 
 eval :: Expr -> Integer
 eval (Lit a) = a
-eval (Add (Lit a) (Lit b)) = a + b
-eval (Add (Lit a) (Add exprA exprB)) = a + eval (Add exprA exprB)
-eval (Add (Add exprA exprB) (Lit a)) = a + eval (Add exprA exprB)
-eval (Add add1 add2) = (eval add1) + (eval add2)
+eval (Add e e) = (eval a) + (eval b)
 
 --Prelude> eval (Add (Lit 1) (Lit 9001))
 --9002
