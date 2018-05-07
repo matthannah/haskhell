@@ -21,6 +21,8 @@ first :: (a -> b) -> (a, c) -> (b, c) -- helper function
 first f (a, c) = (f a, c)
 
 instance Functor (State s) where
+  -- (a -> b) -> f a -> f b
+  -- (a -> b) -> State (s -> (a, s)) -> State (s -> (b, s))
   fmap f (State rs) = State ((first f) . rs)
 
 -- TODO Refactor this
